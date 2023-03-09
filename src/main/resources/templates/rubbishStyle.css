@@ -1,0 +1,27 @@
+.navigation-image {
+    background-image: url('background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.body {*/
+/*    background: url(../background.png) no-repeat top center;*/
+/*}*/
+
+/*.sticky-top {*/
+/*    background-image: url('background.png');*/
+/*    background-position: center center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    position: sticky;*/
+/*    top: 0;*/
+/*}*/

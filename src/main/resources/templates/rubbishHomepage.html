@@ -2,18 +2,17 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Sorting Rubbish</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sort Rubbish</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head></head>
 
-<body background="dogshit.png"
-      style=" background-repeat:no-repeat ;
-      background-size:100% 100%;
-      background-attachment: fixed;">
+<body>
 
 <div class="container-fluid text-center">
-    <div><h2>Sorting Rubbish</h2></div>
+    <div><h1>Sorting Rubbish</h1></div>
 
     <form th:action="@{/rubbishHomepage}">
         <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
@@ -23,34 +22,24 @@
         <input type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
     </form>
 
-    <script type="text/javascript">
-        function clearSearch() {
-            window.location = "[[@{/rubbishHomepage}]]";
-        }
-    </script>
-
     <div>
         <table class="table table-bordered">
-
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>Name</th>-->
-<!--                <th>Recycle Type</th>-->
-<!--                <th>Description</th>-->
-<!--            </tr>-->
-
             <tr th:each="rubbish : ${rubbishes}">
                 <td>ID: [[${rubbish.id}]]</td>
                 <td>[[${rubbish.name}]]</td>
                 <td>[[${rubbish.recycleType}]]</td>
                 <td>[[${rubbish.description}]]</td>
-<!--                <td>-->
-<!--                    <a href="${pageContext.request.contextPath}/view?id=${rubbish.id}">View</a>-->
-<!--                </td>-->
             </tr>
-
         </table>
     </div>
+
 </div>
 </body>
+
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/rubbishHomepage}]]";
+    }
+</script>
+
 </html>

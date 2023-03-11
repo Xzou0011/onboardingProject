@@ -26,11 +26,4 @@ public class RubbishController {
         model.addAttribute("keyword", keyword);
         return "rubbishHomepage";
     }
-
-//    @GetMapping("/rubbishHomepage")
-//    public String showRubbishList(Model model){
-//        List<Rubbish> rubbishes = rubbishService.getAllRubbishes();
-//        model.addAttribute("rubbishes", rubbishes);
-//        return "rubbishHomepage";
-//    }
 }

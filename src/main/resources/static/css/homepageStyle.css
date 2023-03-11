@@ -1,13 +1,22 @@
-.background-image {
-    background-image: url('../image/homepage-background.png');
-    background-position: center center;
-    background-repeat: no-repeat;
+body{
+    background: url('../image/homepage-background.png') no-repeat center center;
     background-size: cover;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/*.background-image-2050 {*/
+/*    background-image: url('../image/Talking-Trash.jpg');*/
+/*    background-position: center center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
 .text {
     text-align: center;

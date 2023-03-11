@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface RubbishRepository extends JpaRepository<Rubbish,Integer> {
-    @Query(value = "select * from rubbish r where r.name like %:keyword%", nativeQuery = true)
+    @Query(value = "select * from rubbish r where r.waste_item like %:keyword%", nativeQuery = true)
     List<Rubbish> search(@Param("keyword") String keyword);
 }

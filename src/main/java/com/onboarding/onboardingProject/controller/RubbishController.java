@@ -26,4 +26,5 @@ public class RubbishController {
         model.addAttribute("keyword", keyword);
         return "rubbishHomepage";
     }
+
 }

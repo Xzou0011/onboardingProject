@@ -12,9 +12,16 @@ public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public List<Article> getArticles(String keyword) {
-        if (keyword != null) {
-            return articleRepository.search(keyword);
-        }
-        return null;
-    }}
+//    public List<Article> getArticles(String keyword) {
+//        if (keyword != null) {
+//            return articleRepository.search(keyword);
+//        }
+//        return null;
+//    }
+
+
+    public List<Article> getAllArticles() {
+        return (List<Article>) articleRepository.findAll();
+    }
+
+}

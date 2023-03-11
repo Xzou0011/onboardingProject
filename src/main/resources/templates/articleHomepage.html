@@ -18,46 +18,235 @@
 </nav>
 
 <!--background image & homepage plain text-->
-<div class="background-image-2023">
-    <div class="text">
-        <h1>Welcome to XXX</h1>
+<!--<div class="background-image-2023">-->
+<!--    <div class="text">-->
+<!--        <h1>Welcome to XXX</h1>-->
+<!--    </div>-->
+<!--</div>-->
 
-    </div>
-    <div class="container">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Accordion Item #1
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Accordion Item #2
-                    </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Accordion Item #3
-                    </button>
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+<div class="container-fluid">
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                    Consumption
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <!--                            <th>date</th>-->
+                            <th>Text</th>
+                            <th>Source</th>
+                            <th>URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="article : ${articles}" th:if="${article.category == 'Consumption'}">
+                            <td th:text="${article.title}">title</td>
+                            <!--                            <td th:text="${article.date}">date</td>-->
+                            <td th:text="${article.text}">text</td>
+                            <td th:text="${article.source}">text</td>
+                            <td>
+                                <a th:href="${article.url}" th:text="${article.url}" target="_blank"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Food
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <!--                            <th>date</th>-->
+                            <th>Text</th>
+                            <th>Source</th>
+                            <th>URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="article : ${articles}" th:if="${article.category == 'Food'}">
+                            <td th:text="${article.title}">title</td>
+                            <!--                            <td th:text="${article.date}">date</td>-->
+                            <td th:text="${article.text}">text</td>
+                            <td th:text="${article.source}">text</td>
+                            <td>
+                                <a th:href="${article.url}" th:text="${article.url}" target="_blank"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Plastic
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <!--                            <th>date</th>-->
+                            <th>Text</th>
+                            <th>Source</th>
+                            <th>URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="article : ${articles}" th:if="${article.category == 'Plastic'}">
+                            <td th:text="${article.title}">title</td>
+                            <!--                            <td th:text="${article.date}">date</td>-->
+                            <td th:text="${article.text}">text</td>
+                            <td th:text="${article.source}">text</td>
+                            <td>
+                                <a th:href="${article.url}" th:text="${article.url}" target="_blank"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseFour">
+                    Policy
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <!--                            <th>date</th>-->
+                            <th>Text</th>
+                            <th>Source</th>
+                            <th>URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="article : ${articles}" th:if="${article.category == 'Policy'}">
+                            <td th:text="${article.title}">title</td>
+                            <!--                            <td th:text="${article.date}">date</td>-->
+                            <td th:text="${article.text}">text</td>
+                            <td th:text="${article.source}">text</td>
+                            <td>
+                                <a th:href="${article.url}" th:text="${article.url}" target="_blank"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Recycle
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <!--                            <th>date</th>-->
+                            <th>Text</th>
+                            <th>Source</th>
+                            <th>URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="article : ${articles}" th:if="${article.category == 'Recycle'}">
+                            <td th:text="${article.title}">title</td>
+                            <!--                            <td th:text="${article.date}">date</td>-->
+                            <td th:text="${article.text}">text</td>
+                            <td th:text="${article.source}">text</td>
+                            <td>
+                                <a th:href="${article.url}" th:text="${article.url}" target="_blank"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Reducing
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <!--                            <th>date</th>-->
+                            <th>Text</th>
+                            <th>Source</th>
+                            <th>URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="article : ${articles}" th:if="${article.category == 'Reducing'}">
+                            <td th:text="${article.title}">title</td>
+                            <!--                            <td th:text="${article.date}">date</td>-->
+                            <td th:text="${article.text}">text</td>
+                            <td th:text="${article.source}">text</td>
+                            <td>
+                                <a th:href="${article.url}" th:text="${article.url}" target="_blank"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

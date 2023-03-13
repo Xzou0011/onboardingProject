@@ -37,9 +37,9 @@
         <form th:action="@{/rubbishHomepage}">
             <input type="text" name="keyword" size="50" th:value="${keyword}" required placeholder="Rubbish Item"/>
             &nbsp;
-            <input type="submit" value="Search"/>
+            <input type="submit" class="btn btn-light" value="Search"/>
             &nbsp;
-            <input type="button" value="Clear" id="btnClear" onclick="clearSearch()"/>
+            <input type="button" value="Clear" class="btn btn-light"  onclick="clearSearch()"/>
         </form>
     </div>
 

@@ -24,7 +24,9 @@
     </nav>
 
     <div class="search-bar text-center">
-        <div><h1>Sorting Rubbish</h1></div>
+        <div class="fw-bold fs-1 text-light">
+            Sorting Rubbish
+        </div>
 
         <form th:action="@{/rubbishHomepage}">
             <input type="text" name="keyword" size="50" th:value="${keyword}" required placeholder="Rubbish Item"/>

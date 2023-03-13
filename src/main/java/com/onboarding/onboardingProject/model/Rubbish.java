@@ -3,6 +3,7 @@ package com.onboarding.onboardingProject.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+
 @Entity
 public class Rubbish {
     @Id

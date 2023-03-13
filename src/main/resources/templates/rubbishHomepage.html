@@ -11,7 +11,11 @@
     <link rel="stylesheet" type="text/css" href="/css/rubbishStyle.css">
     <link href="css/navigation.css" rel="stylesheet">
 
-
+    <style>
+        .table-header {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,10 +47,10 @@
 
     <div class="search-results-container">
         <table class="table">
-            <thead>
+            <thead class="table-header">
             <tr>
 <!--                <th scope="col">ID</th>-->
-                <th scope="col">Rubbish Type</th>
+                <th scope="col">Type</th>
                 <th scope="col">Bin</th>
                 <th scope="col">Description</th>
                 <th scope="col">Best Practice</th>
@@ -72,6 +76,17 @@
 <script type="text/javascript">
     function clearSearch() {
         window.location = "[[@{/rubbishHomepage}]]";
+    }
+</script>
+
+<script>
+    // Check if search results are empty and hide/show the table header accordingly
+    const tableHeader = document.querySelector('.table-header');
+    const tableBody = document.querySelector('tbody');
+    if (tableBody.rows.length === 0) {
+        tableHeader.style.display = 'none';
+    } else {
+        tableHeader.style.display = 'table-header-group';
     }
 </script>
 

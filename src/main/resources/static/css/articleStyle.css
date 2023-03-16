@@ -50,7 +50,9 @@ body{
     /*font-size: 20px;*/
     border: none;
     z-index: -3;
-    margin-left: 723px;
+    /*margin-left: 723px;*/
+    left: 0;
+    right: 0;
     bottom: 0;
 }
 

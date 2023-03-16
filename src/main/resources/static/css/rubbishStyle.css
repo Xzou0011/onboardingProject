@@ -37,7 +37,7 @@ body{
 
 .box {
     /*border: 1px solid #333333;*/
-    margin-top: 100px;
+    margin-top: 20px;
     width: 1000px;
     height: 500px;
     overflow: visible;
@@ -125,3 +125,6 @@ table td:nth-child(2) {
 /*    overflow-y: auto;*/
 /*}*/
 
+html {
+    cursor: url("https://static.cargo.site/images/up.png"), auto;
+}

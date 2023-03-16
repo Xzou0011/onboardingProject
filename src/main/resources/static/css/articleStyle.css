@@ -45,9 +45,20 @@ body{
     overflow-y: auto;
 }
 
-.accordion-item{
-    background-color: rgba(255, 255, 255, 0.5);
+#shareBtn{
+    height: 40px;
+    /*font-size: 20px;*/
+    border: none;
+    z-index: -3;
+    margin-left: 723px;
+    bottom: 0;
 }
+
+/*.accordion-item{*/
+/*    background-color: rgba(255, 255, 255, 0.5);*/
+/*}*/
+
+
 
 /*table td:nth-child(2) {*/
 /*    width: 1000px;*/
@@ -75,3 +86,7 @@ body{
 /*.accordion-body{*/
 /*    overflow: auto;*/
 /*}*/
+
+html {
+    cursor: url("https://static.cargo.site/images/up.png"), auto;
+}

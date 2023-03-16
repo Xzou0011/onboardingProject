@@ -29,46 +29,48 @@
         <a class="nav-link fw-bold py-1 px-0" href="/articleHomepage">Our Guide</a>
     </nav>
 
-    <div class="search-bar text-center">
-        <div class="fw-bold fs-1 text-light">
-            Sorting Rubbish
+    <div class="box">
+        <div class="search-bar text-center">
+            <div class="fw-bold fs-1 text-light">
+                Sorting Rubbish
+            </div>
+
+            <form th:action="@{/rubbishHomepage}">
+                <input id="search-input" type="text" name="keyword" size="50" th:value="${keyword}" required
+                       placeholder="Rubbish Item"/>
+                <input id="search" type="submit" class="btn btn-light" value="Search"/>
+                <input type="button" value="Clear" class="btn btn-light" onclick="clearSearch()"/>
+            </form>
         </div>
 
-        <form th:action="@{/rubbishHomepage}">
-            <input id="search-input" type="text" name="keyword" size="50" th:value="${keyword}" required
-                   placeholder="Rubbish Item"/>
-            <!--            <datalist id="hot-topics">-->
-            <!--                <option value="apple">-->
-            <!--                <option value="banana">-->
-            <!--                <option value="cherry">-->
-            <!--                <option value="date">-->
-            <!--            </datalist>-->
-            <input id="search" type="submit" class="btn btn-light" value="Search"/>
-            <input type="button" value="Clear" class="btn btn-light" onclick="clearSearch()"/>
-        </form>
-    </div>
+        <div class="search-results-container">
+            <table class="table table-borderless">
+<!--                <thead class="table-header">-->
+<!--                <tr>-->
+<!--                    <th scope="col">Type</th>-->
+<!--                    <th scope="col">Bin</th>-->
+<!--                    <th scope="col" data-visible="false">About</th>-->
+<!--                    <th scope="col">Tips</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
 
-    <div class="search-results-container">
-        <table class="table">
-            <thead class="table-header">
-            <tr>
-                <th scope="col">Type</th>
-                <th scope="col">Bin</th>
-                <th scope="col">Description</th>
-                <th scope="col">Best Practice</th>
-            </tr>
-            </thead>
+                <tbody>
+                <tr th:each="rubbish : ${rubbishes}">
+                    <td>[[${rubbish.waste}]]</td>
+                    <td>[[${rubbish.bin}]]</td>
+                    <td>[[${rubbish.about}]]</td>
+                    <td>[[${rubbish.tips}]]</td>
 
-            <tbody>
-            <tr th:each="rubbish : ${rubbishes}">
-                <td>[[${rubbish.waste_item}]]</td>
-                <td>[[${rubbish.bins}]]</td>
-                <td>[[${rubbish.descriptions}]]</td>
-                <td>[[${rubbish.about}]]</td>
-            </tr>
-            </tbody>
-        </table>
+<!--                    <td>-->
+<!--                        <button id="moreInfo" onclick="MoreInfo()">-->
+<!--                            More Info-->
+<!--                        </button>-->
+<!--                    </td>-->
 
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -91,15 +93,32 @@
     }
 </script>
 
-<script type="text/javascript">
-    const search = document.getElementById("search");
+<!--<script type="text/javascript">-->
+<!--    const search = document.getElementById("search");-->
 
-    function modalDisplay() {
-        if (tableBody.rows.length === 0) {
-            alert("item does not exist");
-        }
+<!--    function modalDisplay() {-->
+<!--        if (tableBody.rows.length === 0) {-->
+<!--            alert("item does not exist");-->
+<!--        }-->
+<!--    }-->
+<!--    search.addEventListener("click", modalDisplay)-->
+
+<!--</script>-->
+
+<script>
+    function MoreInfo() {
+        Swal.fire( about + tips + "Our First Alert");
     }
-    search.addEventListener("click", modalDisplay)
+
+    // const moreInfo = document.querySelectorAll('.moreInfo');
+    // moreInfo.forEach(btn => {
+    //     btn.addEventListener('click', () => {
+    //         const about = btn.dataset.about;
+    //         // call function to retrieve additional information using productId
+    //         // display additional information in modal dialog
+    //         alert( about + "Our First Alert");
+    //     });
+    // });
 
 </script>
 
@@ -107,6 +126,8 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
 </html>
 
 <!DOCTYPE html>

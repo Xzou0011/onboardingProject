@@ -8,10 +8,13 @@ import jakarta.persistence.Id;
 public class Rubbish {
     @Id
     private int id;
-    private String waste_item;
-    private String bins;
-    private String descriptions;
+    private String waste;
+    private String bin;
     private String about;
+
+    private String tips;
+
+    private String category;
 
     public Rubbish() {
     }
@@ -24,28 +27,20 @@ public class Rubbish {
         this.id = id;
     }
 
-    public String getWaste_item() {
-        return waste_item;
+    public String getWaste() {
+        return waste;
     }
 
-    public void setWaste_item(String waste_item) {
-        this.waste_item = waste_item;
+    public void setWaste(String waste) {
+        this.waste = waste;
     }
 
-    public String getBins() {
-        return bins;
+    public String getBin() {
+        return bin;
     }
 
-    public void setBins(String bins) {
-        this.bins = bins;
-    }
-
-    public String getDescriptions() {
-        return descriptions;
-    }
-
-    public void setDescriptions(String descriptions) {
-        this.descriptions = descriptions;
+    public void setBin(String bin) {
+        this.bin = bin;
     }
 
     public String getAbout() {
@@ -54,5 +49,21 @@ public class Rubbish {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public String getTips() {
+        return tips;
+    }
+
+    public void setTips(String tips) {
+        this.tips = tips;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

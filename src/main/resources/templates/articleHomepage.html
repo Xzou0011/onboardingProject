@@ -257,13 +257,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 </div>
 
 <script>
-    let url = window.location.href
+    // let url = window.location.href
     document.querySelector('#shareBtn')
         .addEventListener('click', event => {
             if (navigator.share) {
                 navigator.share({
                     title: 'Rubbish Sorting Website',
-                    url: url
+                    url: ("http://onboardingproject.azurewebsites.net/articleHomepage")
                 })
             } else {
                 alert("Please check your browser!");

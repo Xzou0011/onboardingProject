@@ -7,6 +7,33 @@ body{
     align-items: center;
 }
 
+#search-bar {
+    border-radius: 18px;
+    padding: 20px;
+    width: 450px;
+    height: 13px;
+}
+
+#submit-button{
+    background-color: rgb(255,255,255, 0.8);
+    width: 80px;
+}
+
+#clear-button{
+    background-color: rgb(255,255,255, 0.8);
+    width: 80px;
+}
+
+.button {
+    border: none;
+    border-radius:10px;
+    color: white;
+    font-size: 16px;
+}
+
+.container-search{
+    margin-left: 8.7rem;
+}
 
 .box {
     /*border: 1px solid #333333;*/
@@ -53,11 +80,13 @@ table {
 .container-bin-information{
     max-width: 1000px;
     overflow-y: auto;
+    border-collapse:separate;
+    border-radius:10px;
 }
 
-/*table td:nth-child(3) {*/
-/*    width: 1000px;*/
-/*}*/
+table td:nth-child(3) {
+    width: 230px;
+}
 
 table td:nth-child(1) {
     width: 150px;

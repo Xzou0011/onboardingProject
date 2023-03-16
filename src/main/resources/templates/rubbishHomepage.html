@@ -10,7 +10,6 @@
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/rubbishStyle.css">
     <link href="css/navigation.css" rel="stylesheet">
-
     <style>
         .table-header {
             display: none;
@@ -26,7 +25,7 @@
         <a class="nav-link fw-bold py-1 px-0" href="/">Home</a>
         <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/rubbishHomepage">
             Waste Classification</a>
-        <a class="nav-link fw-bold py-1 px-0" href="/articleHomepage">Our Guide</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/articleHomepage">Article Guide</a>
     </nav>
 
     <div class="box">
@@ -34,18 +33,23 @@
             <div class="fw-bold fs-1 text-light">
                 Sorting Rubbish
             </div>
-
-            <form th:action="@{/rubbishHomepage}">
-                <input id="search-input" type="text" name="keyword" size="50" th:value="${keyword}" required
-                       placeholder="Rubbish Item"/>
-                <input id="search" type="submit" class="btn btn-light" value="Search"/>
-                <input type="button" value="Clear" class="btn btn-light" onclick="clearSearch()"/>
-            </form>
+            <br>
+            <div class="container-search">
+                <form th:action="@{/rubbishHomepage}">
+                    <input type="text" name="keyword" size="50" th:value="${keyword}" required
+                           placeholder="Rubbish Item" id="search-bar"/>
+                    &nbsp;
+                    <input type="submit" class="btn btn-light" value="Search" id="submit-button"/>
+                    &nbsp;&nbsp;
+                    <input type="button" value="Clear" class="btn btn-light" onclick="clearSearch()" id="clear-button"/>
+                </form>
+            </div>
         </div>
 
         <div class="container-bin-information">
             <ul class="list-group list-group-horizontal table-borderless">
                 <li class="list-group-item" style="border: none">
+                    <br>
                     <div style="text-align:center;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="66px" fill="#2E8B57"
                              class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -59,12 +63,14 @@
                         </div>
                         <br>
                         <div>
-                            Used to dispose of <span class="text-decoration-underline">organic waste</span>. However, they should not be
+                            Used to dispose of <span class="text-decoration-underline">organic waste</span>. However,
+                            they should not be
                             used for plastic bags, gardening tools or flower pots.
                         </div>
                     </div>
                 </li>
                 <li class="list-group-item" style="border: none">
+                    <br>
                     <div style="text-align:center;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="66px" fill="yellow"
                              class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -78,12 +84,14 @@
                         </div>
                         <br>
                         <div>
-                            Used for <span class="text-decoration-underline">recyclable waste</span>, fed into a high-tech machine that analyses the
+                            Used for <span class="text-decoration-underline">recyclable waste</span>, fed into a
+                            high-tech machine that analyses the
                             waste and separates it into different types.
                         </div>
                     </div>
                 </li>
                 <li class="list-group-item" style="border: none">
+                    <br>
                     <div style="text-align:center;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="66px" fill="red"
                              class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -97,7 +105,8 @@
                         </div>
                         <br>
                         <div>
-                            Designed to hold <span class="text-decoration-underline">general household waste</span>. This type of waste takes a
+                            Designed to hold <span class="text-decoration-underline">general household waste</span>.
+                            This type of waste takes a
                             long time to decompose and is the most harmful to the environment, so make sure you protect
                             the environment by putting your waste in biodegradable bags.
                         </div>
@@ -119,8 +128,8 @@
 
                 <tbody>
                 <tr th:each="rubbish : ${rubbishes}">
-                    <td style="color:#FFFFFF">[[${rubbish.waste}]]</td>
-                    <td style="color:#FFFFFF">[[${rubbish.bin}]]</td>
+                    <td style="color:#FFFFFF; font-weight:bold">[[${rubbish.waste}]]</td>
+                    <td style="color:#FFFFFF; font-weight:bold">[[${rubbish.bin}]]</td>
                     <td style="color:#FFFFFF">[[${rubbish.about}]]</td>
                     <td style="color:#FFFFFF">[[${rubbish.tips}]]</td>
 

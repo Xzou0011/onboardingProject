@@ -43,29 +43,75 @@
             </form>
         </div>
 
-        <div class="search-results-container">
+        <div class="container-bin-information">
+            <ul class="list-group list-group-horizontal table-borderless">
+                <li class="list-group-item" style="border: none">
+                    <div style="text-align:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="66px" fill="#2E8B57"
+                             class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                        </svg>
+                    </div>
+                    <br>
+                    <div class="fw-bold"> Green bins are used to dispose of organic waste. However, they should not be
+                        used for plastic
+                        bags,
+                        gardening tools or flower pots.
+                    </div>
+                </li>
+                <li class="list-group-item" style="border: none">
+                    <div style="text-align:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="66px" fill="yellow"
+                             class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                        </svg>
+                    </div>
+                    <br>
+                    <div class="fw-bold">
+                        The yellow bins are used for recyclable waste, fed into a high-tech machine that analyses the
+                        waste
+                        and separates it into different types.
+                    </div>
+                </li>
+                <li class="list-group-item" style="border: none">
+                    <div style="text-align:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="66px" height="66px" fill="red"
+                             class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                        </svg>
+                    </div>
+                    <br>
+                    <div class="fw-bold"> Designed to hold general household waste. This type of waste takes a
+                        long time to decompose and is the most harmful to the environment, so make sure you protect the
+                        environment by putting your waste in biodegradable bags.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search-results-container ">
             <table class="table table-borderless">
-<!--                <thead class="table-header">-->
-<!--                <tr>-->
-<!--                    <th scope="col">Type</th>-->
-<!--                    <th scope="col">Bin</th>-->
-<!--                    <th scope="col" data-visible="false">About</th>-->
-<!--                    <th scope="col">Tips</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
+                <thead class="table-header">
+                <tr>
+                    <th scope="col" style="color:#FFFFFF">Type</th>
+                    <th scope="col" style="color:#FFFFFF">Bin</th>
+                    <th scope="col" style="color:#FFFFFF">About</th>
+                    <th scope="col" style="color:#FFFFFF">Tips</th>
+                </tr>
+                </thead>
 
                 <tbody>
                 <tr th:each="rubbish : ${rubbishes}">
-                    <td>[[${rubbish.waste}]]</td>
-                    <td>[[${rubbish.bin}]]</td>
-                    <td>[[${rubbish.about}]]</td>
-                    <td>[[${rubbish.tips}]]</td>
+                    <td style="color:#FFFFFF">[[${rubbish.waste}]]</td>
+                    <td style="color:#FFFFFF">[[${rubbish.bin}]]</td>
+                    <td style="color:#FFFFFF">[[${rubbish.about}]]</td>
+                    <td style="color:#FFFFFF">[[${rubbish.tips}]]</td>
 
-<!--                    <td>-->
-<!--                        <button id="moreInfo" onclick="MoreInfo()">-->
-<!--                            More Info-->
-<!--                        </button>-->
-<!--                    </td>-->
+                    <!--                    <td>-->
+                    <!--                        <button id="moreInfo" onclick="MoreInfo()">-->
+                    <!--                            More Info-->
+                    <!--                        </button>-->
+                    <!--                    </td>-->
 
                 </tr>
                 </tbody>
@@ -85,14 +131,36 @@
 
 <script>
     const tableHeader = document.querySelector('.table-header');
+    const binInfo = document.querySelector('.container-bin-information')
     const tableBody = document.querySelector('tbody');
     if (tableBody.rows.length === 0) {
         tableHeader.style.display = 'none';
     } else {
         tableHeader.style.display = 'table-header-group';
+        binInfo.style.display = 'none';
     }
 </script>
 
+<!--<script>-->
+<!--    function Success() {-->
+<!--        if (tableBody.rows.length === 0) {-->
+<!--            Swal.fire({-->
+<!--                icon: 'error',-->
+<!--                title: 'Oops...',-->
+<!--                text: 'Something went wrong!',-->
+<!--                footer: '<a href="">Why do I have this issue?</a>'-->
+<!--            })-->
+<!--        } else {-->
+<!--            Swal.fire({-->
+<!--                position: 'top-end',-->
+<!--                icon: 'success',-->
+<!--                title: 'Your work has been saved',-->
+<!--                showConfirmButton: false,-->
+<!--                timer: 1500-->
+<!--            })-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
 <!--<script type="text/javascript">-->
 <!--    const search = document.getElementById("search");-->
 
@@ -107,7 +175,7 @@
 
 <script>
     function MoreInfo() {
-        Swal.fire( about + tips + "Our First Alert");
+        Swal.fire(about + tips + "Our First Alert");
     }
 
     // const moreInfo = document.querySelectorAll('.moreInfo');

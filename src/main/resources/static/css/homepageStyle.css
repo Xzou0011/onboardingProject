@@ -1,4 +1,4 @@
-body{
+body {
     background: url('../image/homepage-background.png') no-repeat center center;
     background-size: cover;
     height: 100vh;
@@ -7,15 +7,70 @@ body{
     align-items: center;
 }
 
+a {
+    color: white;
+}
+
+.container-title {
+    margin-top: -200px;
+    width: 1200px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.container-content {
+    /*margin-top: 250px;*/
+    width: 1000px;
+    height: 100px;
+}
+
 .text {
     text-align: center;
     color: white;
     font-size: 3rem;
 }
 
-.footer-style{
-    color: white;
-    opacity: 0.5;
-    font-size: 10px;
-    line-height: 0.1;
+.hover-position {
+    position: fixed;
+    bottom: 27rem;
+    /*margin-bottom: -110rem;*/
+    right: 8rem;
+    width: 300px;
+    height: auto;
+    /*border: 3px solid #73AD21;*/
 }
+
+.hover-title {
+    display: inline;
+    pointer-events: auto;
+    cursor: pointer;
+    color: white;
+    font-size: 0.95rem;
+}
+
+body:not(.mobile) .hover-title:hover + .hover-image {
+    visibility: visible;
+    pointer-events: none;
+}
+
+.hover-image {
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover-image img {
+    max-width: 200%;
+    max-height: 100%;
+    width: 100vw;
+    height: auto;
+}
+

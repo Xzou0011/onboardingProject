@@ -7,16 +7,17 @@ body{
     align-items: center;
 }
 
+
 .box {
     /*border: 1px solid #333333;*/
     margin-top: 100px;
-    width: 650px;
+    width: 1000px;
     height: 500px;
     overflow: visible;
 }
 
 table {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(202, 136, 129, 0.8);
     /*position: relative;*/
     /*left: 0;*/
     /*margin-left: 100px;*/
@@ -25,10 +26,16 @@ table {
     border-radius:10px;
 }
 
+.list-group .list-group-item{
+    color: rgba(110, 75, 80, 1);
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+}
+
 .search-results-container {
     /*min-height: 400px;*/
-    margin-top: unset;
-    max-width: 670px;
+    /*margin-top: unset;*/
+    max-width: 1000px;
     overflow-y: auto;
     /*z-index: 100;*/
 }
@@ -43,17 +50,36 @@ table {
     margin-bottom: 30px;
 }
 
+.container-bin-information{
+    max-width: 1000px;
+    overflow-y: auto;
+}
+
 /*table td:nth-child(3) {*/
 /*    width: 1000px;*/
 /*}*/
 
-/*table td:nth-child(1) {*/
-/*    width: 1px;*/
-/*}*/
+table td:nth-child(1) {
+    width: 150px;
+}
 
-/*table td:nth-child(2) {*/
-/*    width: 100px;*/
-/*}*/
+table td:nth-child(2) {
+    width: 150px;
+}
+
+.list-group .list-group-item:nth-child(1) {
+    width: 333px;
+}
+
+.list-group .list-group-item:nth-child(2) {
+    width: 333px;
+}
+
+.list-group .list-group-item:nth-child(3) {
+    width: 333px;
+}
+
+
 
 /*.text {*/
 /*    text-align: center;*/

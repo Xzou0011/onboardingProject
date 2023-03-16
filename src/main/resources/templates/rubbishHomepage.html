@@ -24,8 +24,8 @@
 
     <nav class="navbar navbar-expand-lg bg-transparent nav-masthead float-md-end">
         <a class="nav-link fw-bold py-1 px-0" href="/">Home</a>
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/rubbishHomepage">Waste
-            Classification</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/rubbishHomepage">
+            Waste Classification</a>
         <a class="nav-link fw-bold py-1 px-0" href="/articleHomepage">Our Guide</a>
     </nav>
 
@@ -35,21 +35,23 @@
         </div>
 
         <form th:action="@{/rubbishHomepage}">
-            <input type="text" name="keyword" size="50" th:value="${keyword}" required placeholder="Rubbish Item"/>
-            &nbsp;
-            <input type="submit" class="btn btn-light" value="Search"/>
-            &nbsp;
-            <input type="button" value="Clear" class="btn btn-light"  onclick="clearSearch()"/>
+            <input id="search-input" type="text" name="keyword" size="50" th:value="${keyword}" required
+                   placeholder="Rubbish Item"/>
+            <!--            <datalist id="hot-topics">-->
+            <!--                <option value="apple">-->
+            <!--                <option value="banana">-->
+            <!--                <option value="cherry">-->
+            <!--                <option value="date">-->
+            <!--            </datalist>-->
+            <input id="search" type="submit" class="btn btn-light" value="Search"/>
+            <input type="button" value="Clear" class="btn btn-light" onclick="clearSearch()"/>
         </form>
     </div>
-
-    <!--    <br>-->
 
     <div class="search-results-container">
         <table class="table">
             <thead class="table-header">
             <tr>
-<!--                <th scope="col">ID</th>-->
                 <th scope="col">Type</th>
                 <th scope="col">Bin</th>
                 <th scope="col">Description</th>
@@ -59,7 +61,6 @@
 
             <tbody>
             <tr th:each="rubbish : ${rubbishes}">
-<!--                <td>ID: [[${rubbish.id}]]</td>-->
                 <td>[[${rubbish.waste_item}]]</td>
                 <td>[[${rubbish.bins}]]</td>
                 <td>[[${rubbish.descriptions}]]</td>
@@ -67,11 +68,12 @@
             </tr>
             </tbody>
         </table>
+
     </div>
 </div>
-<!--</div>-->
 
 </body>
+
 
 <script type="text/javascript">
     function clearSearch() {
@@ -80,7 +82,6 @@
 </script>
 
 <script>
-    // Check if search results are empty and hide/show the table header accordingly
     const tableHeader = document.querySelector('.table-header');
     const tableBody = document.querySelector('tbody');
     if (tableBody.rows.length === 0) {
@@ -90,10 +91,22 @@
     }
 </script>
 
+<script type="text/javascript">
+    const search = document.getElementById("search");
+
+    function modalDisplay() {
+        if (tableBody.rows.length === 0) {
+            alert("item does not exist");
+        }
+    }
+    search.addEventListener("click", modalDisplay)
+
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-
+<!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
 </html>
 
 <!DOCTYPE html>

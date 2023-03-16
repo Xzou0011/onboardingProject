@@ -27,8 +27,8 @@ table {
 }
 
 .list-group .list-group-item{
-    color: rgba(110, 75, 80, 1);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(202, 136, 129, 0.8);
+    color: white ;
     font-size: 1rem;
 }
 
@@ -78,8 +78,6 @@ table td:nth-child(2) {
 .list-group .list-group-item:nth-child(3) {
     width: 333px;
 }
-
-
 
 /*.text {*/
 /*    text-align: center;*/

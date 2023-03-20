@@ -11,12 +11,11 @@
 ## Waste classification page
 
 ### Search function
-#### By default:
-#### Show bin information
-#### When search results return, bin information will be hided
+#### By default: Show bin information
 <img width="1440" alt="pic5" src="https://user-images.githubusercontent.com/106866015/226347823-445b1153-e09c-4b70-98eb-1a9ae7edd302.png">
 
 #### For example, search for "can"
+#### When search results return, bin information will be hided
 <img width="1440" alt="pic3" src="https://user-images.githubusercontent.com/106866015/226347394-ca2b098a-7480-4f4a-a180-86d8dbbaed6f.png">
 
 ## Article page:

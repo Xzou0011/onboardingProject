@@ -1,5 +1,7 @@
 # Waste Sorting Website | Use Guide
 
+### Click here for live website: https://onboardingproject.azurewebsites.net
+
 ## Homepage
 
 <img width="1440" alt="pic1" src="https://user-images.githubusercontent.com/106866015/226347147-9829977b-e56d-4ffd-8343-c2753af35266.png">

@@ -1,5 +1,10 @@
 # Waste Sorting Website | Use Guide
 
+### Develoepr: Xin
+### BA: Jess and Hong
+### Prototype:Hong
+### Database: Hari and Chris
+
 ### Click here for live website: https://onboardingproject.azurewebsites.net
 
 ## Homepage

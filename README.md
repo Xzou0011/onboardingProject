@@ -2,7 +2,7 @@
 
 #### BA: Jess and Hong
 #### Database: Hari and Chris
-#### Prototype:Hong
+#### Prototype: Hong
 #### Develoepr: Xin Zou
 
 ### Click here for live website: https://onboardingproject.azurewebsites.net
